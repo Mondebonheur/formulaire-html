@@ -14,6 +14,15 @@
             --border-color: #ccc;
         }
 
+header {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  height: 50px;
+  margin-right: 10px;
+}
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--light-gray);
@@ -126,7 +135,20 @@
         input.invalid, select.invalid, textarea.invalid {
             border-color: #e74c3c;
         }
-        
+
+        #paiement {
+  direction: rtl; /* certains navigateurs ouvrent vers le haut */
+}
+
+        .btn-whatsapp {
+  float: right;
+  background-color: #25D366;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
         /* --- Navigation entre les étapes --- */
         .form-navigation {
             margin-top: 2rem;
@@ -163,6 +185,12 @@
 </head>
 <body>
 
+  <header>
+    <img src="logo.JPEG" alt="Logo ONG" class="logo">
+    <h1>MONDE ET BONHEUR ONG INTERNATIONALE</h1>
+  </header>
+
+    
     <div class="form-container">
         <h1>Votre Avenir Commence Ici</h1>
         
@@ -188,6 +216,11 @@
                     <label for="prenom">Prénom</label>
                     <input type="text" id="prenom" name="prenom" required>
                 </div>
+            <div class="form-group">        
+<label for="whatsapp">Contact WhatsApp :</label>
+<input type="tel" id="whatsapp" name="whatsapp" placeholder="+237 6XX XXX XXX" required>
+            </div>
+                
                 <div class="form-group">
                     <label for="email">E-mail</label>
                     <input type="email" id="email" name="email" required>
@@ -288,16 +321,18 @@
             <fieldset class="form-step">
                 <legend>Finalisation</legend>
                 <p class="reassurance-message">"Le voyage de mille lieues commence par un premier pas." - Lao Tseu</p>
-                <div class="form-group">
-                    <label for="whatsapp">Contact WhatsApp (optionnel)</label>
-                    <input type="tel" id="whatsapp" name="whatsapp" placeholder="Ex: +2348106814709">
-                </div>
+               
                 <div class="form-group">
                     <label for="paiement">Méthode de paiement envisagée</label>
                     <select id="paiement" name="paiement" required>
                         <!-- Options chargées dynamiquement -->
                     </select>
                 </div>
+
+                <a href="https://wa.me/2348106814709" target="_blank" class="btn-whatsapp">
+  Poser une question sur les formations
+</a>
+
                 <div class="form-navigation">
                     <button type="button" class="btn btn-secondary prev-btn">Précédent</button>
                     <button type="submit" class="btn btn-primary" id="submitBtn">Envoyer ma candidature</button>
@@ -476,3 +511,4 @@
     </script>
 </body>
 </html>
+
